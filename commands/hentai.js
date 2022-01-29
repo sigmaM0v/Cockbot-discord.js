@@ -1,9 +1,10 @@
 const fetch = require('node-fetch')
 
 module.exports = {
-    name: 'hentai1',
+    name: 'hentai',
     description: 'sends hentai',
     async execute(message, Discord){
+        //same as hehe.js
         const random = (min, max) => Math.floor(Math.random() * (max - min)) + min; 
 
         const subs = ['hentai', 'ecchi','artistic_ecchi', 'thighdeology', 'hentai_gif', 'genshinimpacthentai', 'waifusgonewild', 'yuri']
@@ -21,7 +22,7 @@ module.exports = {
             .setImage(data.url)
             .setTimestamp()
             .setURL(data.postLink)
-
+            //checks if channel which message was sent to has nsfw tag
             if(!message.channel.nsfw){
                 return message.channel.send("This aint a NSFW channel, baka.")
             }else message.channel.send({ embeds: [newEmbed] })
