@@ -4,3 +4,4 @@ commands/embed.js
 commands/ping.js
 node_modules/.package-lock.json
 config.json
+.gitignore
